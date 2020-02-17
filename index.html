@@ -6,17 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>aha</title>
     <style type="text/css">
-        
+        *{
+            margin: 0;
+            padding: 0px;
+        }
     </style>
+    <!-- 引用广告栏样式 -->
+    <link rel="stylesheet" href="css/nav-ad.css">
 </head>
 <body>
     <!-- 头部 -->
     <div id="header">
 
-
     </div>
 
-
+    <!-- 广告栏 -->
+    <div id="nav-ad">
+            <div>
+                <span>我们只有比别人更努力才能更好，哈哈 做一名文艺的程序员好像也不错诶</span>
+            </div>
+    </div>
+    
     <!-- 正文内容 -->
     <div id="content"></div>
 
@@ -25,4 +35,16 @@
     <div id="footer"></div>
     
 </body>
+<script>
+        var pp = document.querySelector('#nav-ad>div>span');
+        var x = 40;
+        var scroll = function () {
+          pp.style.marginLeft = x + 'px';//通过改变margin-left的值来写出走马灯的效果
+          x--;
+          if (x + pp.offsetWidth <= 0) {
+            x = 430;  //根据最外层div标签的宽度来设置
+          }
+        }
+        setInterval(scroll, 20);
+    </script>
 </html>
