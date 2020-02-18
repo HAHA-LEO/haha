@@ -1,9 +1,17 @@
+
+a {
+    font-size: 90%;
+    /* 背景透明 */
+    background: transparent;
+    text-decoration: none;
+    color: black;
+}
 #nav-ad{
     position: relative;
     float: left;
     width: 80%;
     height: 30px;
-    margin: 20px 0 0 65px;
+    margin-left:80px;
     padding: 0 20px;
     line-height: 28px;
     background: #fdfdfd;
@@ -19,12 +27,68 @@
     cursor: pointer;
 }
 
-#nav-ad>div>span {
-    display: inline-block;
-} 
-
-#nav-ad>div {
+.nav-ad-item {
     overflow: hidden;
-    /* 一些不同的光标 */
-    cursor: pointer;
+    position: relative;
+    height: 100%;  
 }
+#nav-ad .nav-ad-item {
+    /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    display: block;
+    justify-content: center;
+    -webkit-animation: scroll 15s  infinite;
+    animation: scroll 15s infinite;
+    text-align: center;
+}
+
+#nav-ad .nav-ad-item a:hover {
+   border-bottom: 1px solid lightcyan;
+   color: gainsboro;
+}
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    10% {
+        -webkit-transform: translateY(-0px);
+        transform: translateY(-0px)
+    }
+    20% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+    30% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+    40% {
+        -webkit-transform: translateY(-60px);
+        transform: translateY(-60px)
+    }
+    50% {
+        -webkit-transform: translateY(-60px);
+        transform: translateY(-60px)
+    }
+    60% {
+        -webkit-transform: translateY(-90px);
+        transform: translateY(-90px)
+    }
+    70% {
+        -webkit-transform: translateY(-90px);
+        transform: translateY(-90px)
+    }
+    80% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    90% {
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px)
+    }
+    100.0% {
+        -webkit-transform: translateY(-122px);
+        transform: translateY(-122px)
+    }
+}
+

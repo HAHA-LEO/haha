@@ -1,0 +1,95 @@
+
+    #login-header{
+        height: 80px;
+    }
+     #content{
+        height: 430px;
+        background-color: rgb(194, 219, 241);
+
+    }
+    #box{
+        height:330px;
+        width: 350px;
+        background-color:rgba(247, 245, 245,0.4);
+        position: absolute;
+        margin-left:500px;
+        margin-top:20px;
+
+    }
+    .member{
+        position: absolute;
+        margin-left: 30px;
+         font-size: 13px;
+         font-weight: bolder;
+         color: white;
+     }
+     .shop{
+       margin-left:170px;
+        font-size: 10px;
+        color: white;
+     }
+     .shop a{
+         text-decoration: none;
+         color: gray;
+     }
+    
+     .shop a:hover{
+         text-decoration: none;
+         color: cyan;
+     }
+     #page {
+        margin-top: 20px;
+        height: 30px;
+
+     }
+     .demo-box{
+       height: 60%;
+       margin-top: 30px;
+       text-align: center;
+     }
+     .grid-lab{
+        width: 99%;
+        height: 60px;      
+        line-height: 10px;
+     }
+     .grid-lab  input{
+         height:20px;
+         width: 200px;
+
+     }
+     .label{
+         text-align: right;
+         font-size: 12pt;
+     }
+     .grid-lab  .submit{
+         height:35px;
+         width:120px;
+         background-color: rgb(215, 219, 219);
+         text-align: center;
+        border-color: rgb(215, 219, 219);
+     }
+    
+#footer{
+ height: 80px;
+ width: 100%;
+ border:1px solid black;
+}
+#footer-top ul{
+ padding-left: 450px;
+ list-style: none;
+}
+#footer-top ul li{
+ float: left;
+ padding: 0px 0px 20px 20px;
+}
+#footer-top ul li a{
+ text-decoration: none;
+ font-size: 12px;
+ color: black;
+}
+#footer-bottom{
+ position: absolute;
+ margin-top:30px;
+ margin-left: 400px;
+ font-size: 11px;
+}

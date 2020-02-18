@@ -1,0 +1,161 @@
+#header{
+    height:35px;
+    width: 100%;
+    border: 1px solid rgb(68, 57, 57);
+    font-size: 12px;
+}
+#header ul{
+    list-style: none;
+}
+#header .orange{
+    color: orange;
+}
+#header a{
+text-decoration: none;
+color: #000;
+
+}
+/* 导航栏left_nav部分*/
+#left_nav{
+    height:30px;
+    float: left;
+    margin-left:140px;
+}
+#left_nav ul li{
+float: left;
+width: 70px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+}
+#left_nav ul li a:hover{
+color: orange;
+}
+/* 导航栏right_nav部分*/
+#right_nav{
+    overflow: hidden;
+    height:30px;
+    float: left;
+    margin-left: 120px;
+}
+#menu li{
+    float: left;
+    display: block;
+    width: 84px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right:1px;
+}
+
+#menu li a:link{
+display: block;
+/* 未悬浮时的背景颜色 */
+font-size:10px;
+color: #333;
+width: 81px;
+height: 30px;
+line-height: 30px;
+}
+
+#menu li a:hover{
+background:rgb(238, 235, 235);
+color:orange;
+}
+#menu li ul{
+position: absolute;
+top: 32px;
+display: none;
+width: 80px;
+border: 1px solid #f3eff0;
+border-top: none;
+z-index: 1;
+background: #fff;
+}
+
+#menu li:hover ul{
+    display: block;
+}
+#menu li ul li{
+width: 80px;
+height: 30px;
+line-height: 30px;
+}
+
+#menu li ul li a:link{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+}
+#menu li ul li a:hover{
+color: rgb(8, 8, 8);
+text-decoration: none;
+}
+@font-face {
+	/*定义个性字体名称*/
+	font-family: 'Glyphicons';
+	/*定义个性字体来源文件*/
+	src: url('../fonts/glyphicons-regular.eot');
+	src: url('../fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-regular.woff') format('woff'), url('../fonts/glyphicons-regular.ttf') format('truetype'), url('../fonts/glyphicons-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.icon {
+	/*当前标签显示为单行块状元素*/
+	display: inline-block;
+	/*页面上的字体抗锯齿,使用后字体看起来会更清晰舒服,只适合Chrome和Safari浏览器*/
+	-webkit-font-smoothing: antialiased;
+	/*兼容firefox浏览器的字体抗锯齿*/
+	-moz-osx-font-smoothing: grayscale;
+	/*相对定位*/
+	position: relative;
+	/*从上向下偏移1px*/
+	top: 1px;
+	/*设置行高为1*/
+	line-height: 1;
+	/*字体宽度设为默认值*/
+	font-weight: normal;
+	/*字体样式设为默认值*/
+	font-style: normal;
+}
+.icon-home:before {
+	/*使用个性字体Glyphicons*/
+	font-family: Glyphicons;
+	/*在当前元素上插入图标，其中\e021是字体的unicode编码*/
+	content: "\e021";
+}
+			/* 显示导航图标 */
+			.icon-justify:before {
+				font-family: Glyphicons;
+				content: "\e114";
+				display: inline-block;
+				-webkit-font-smoothing: antialiased;
+				position: relative;
+				top: 1px;
+				line-height: 1;
+            }
+            /*显示登录图标*/
+.icon-user:before {
+	font-family: Glyphicons;
+	content: "\e004";
+}
+        /*显示首页图标*/
+.icon-conversation:before {
+	font-family: Glyphicons;
+	content:"\e245";
+}
+ /*显示收藏图标*/
+.icon-collect:before {
+	font-family: Glyphicons;
+	content:"\e050";
+}
+/*  */
+/*显示导航图标*/
+.icon-justify:before {
+	font-family: Glyphicons;
+	content: "\e114";
+}
+/*显示购物车图标*/
+
+.icon-shopping-cart:before {
+	font-family: Glyphicons;
+	content: "\e203";
+}
