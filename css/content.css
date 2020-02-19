@@ -69,8 +69,8 @@
 }
 .content-search-right-spc{
     height: 40px;
-    width: 200px;
-    margin:25px 0px 0px 50px;
+    width: 180px;
+    margin:32px 0px 0px 50px;
     border: 1px solid rgb(241, 239, 239);
     border-radius:5px;
     clear: both;
@@ -101,5 +101,11 @@
     color: gainsboro;
     border-bottom: 2px solid cyan;
 }
+/* 每日单品 */
+.new{
+    height:2320px;
+    width: 100%;
+}
+
 
 
