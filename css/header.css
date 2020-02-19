@@ -1,7 +1,7 @@
 #header{
     height:35px;
     width: 100%;
-    border: 1px solid rgb(68, 57, 57);
+    border:1px solid rgb(68, 57, 57);
 	font-size: 12px;
 	z-index: 2;
 }

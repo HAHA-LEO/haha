@@ -93,7 +93,7 @@
 }
 .content-nav ul,.content-nav ul li,.content-nav ul li{
     list-style: none;
-    margin: 0px 17px;
+    margin: 0px 18px;
     padding: 4px 0px;
     float: left;
 }
@@ -101,10 +101,54 @@
     color: gainsboro;
     border-bottom: 2px solid cyan;
 }
+/* 每日必看 */
+.new-tittle{
+    height: 40px;
+    text-align: center;
+    font-size: 17pt;
+    font-weight: bolder;
+}
+.new-tittle .new-tittle-sp{
+    display: block;
+    margin-top: 10px;
+}
 /* 每日单品 */
 .new{
     height:2320px;
     width: 100%;
+}
+.sig-new{
+    height: 100%;
+    width: 80%;
+    margin-left: 10%;
+    border:1px solid cyan;
+}
+.sig-new-detail{
+    height: 25px;
+    border-bottom:1px solid black;
+    font-size: 12px;
+}
+.sig-new-detail-chi{
+    height: 100%;
+    width: 170px;
+    float: left;
+    background-color: black;
+    color: white;
+}
+.sig-new-detail-chi img{
+    height: 25px;
+    width: 30px;
+    margin-left: 5px;
+
+}
+.sig-new-detail-chi span{
+    position: absolute;
+    top:296px;
+    left: 165px;
+}
+.sig-new-detail-eng{
+padding-top: 5px;
+margin-left:3px;
 }
 
 
