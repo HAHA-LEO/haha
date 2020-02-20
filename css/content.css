@@ -2,7 +2,7 @@
     bottom:0px; 
     left:0px; 
     width:100%; 
-    height:100%px; 
+    height:90%; 
     /* 为body对象和textarea的默认值。在需要时剪切内容并添加滚动条  */
     overflow:scroll; 
     z-index:1; 
@@ -119,8 +119,8 @@
 }
 .sig-new{
     height: 100%;
-    width: 80%;
-    margin-left: 10%;
+    width: 88%;
+    margin-left: 6%;
     border:1px solid cyan;
 }
 .sig-new-detail{
@@ -142,13 +142,105 @@
 
 }
 .sig-new-detail-chi span{
-    position: absolute;
-    top:296px;
-    left: 165px;
+    position: relative;
+    bottom: 8px;
 }
 .sig-new-detail-eng{
-padding-top: 5px;
-margin-left:3px;
+    padding-top: 5px;
+    margin-left:3px;
+}
+/* 单品 */
+.single{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid red;
+}
+.single .single-grid{
+    height: 30rem;
+    width: 22rem;
+    margin-top:20px;
+    box-shadow: 1px 1px 7px rgb(221, 220, 220);
+    border: 1px solid rgb(216, 216, 215);
+}
+.single-grid-ad{
+    height:50px;
+    width: 100%;
+    border: 1px solid pink;
+}
+.single-grid-ad-left{
+    height: 100%;
+    width: 121px;
+    float: left;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.single-grid-ad-left-item1{
+    height: 100%;
+    display:inline-block;
+    width: 60px;
+    color: white;
+    background-color: purple;
+}
+.single-grid-ad-left-item2{
+    height: 100%;
+    width: 60px;
+    color: white;
+    background-color: rgb(68, 116, 248);
+    display:inline-block;
+}
+.single-grid-ad-right-spc{
+    height: 20px;
+    width:90px;
+    padding:5px;
+    margin:9px 0px 0px 120px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    display: inline-block;
+}
+.single-grid-img{
+    height: 280px;
+    overflow: hidden;
+}
+.single-grid-img img{
+    height: 20rem;
+    width: 35rem;
+    margin-left: -100px;
+    margin-top: -20px;
+}
+.single-grid-detail-purple{
+    height: 30px;
+    width: 94%;
+    margin-left:3%;
+    text-align: center;
+    color: white;
+    background-color: rgb(185, 153, 185);
+}
+.single-grid-detail-gray{
+    height: 30px;
+    width: 90%;
+    margin-left:5%;
+    text-align: center;
+    color: white;
+    background-color: rgb(196, 193, 195);
+}
+.single-grid-place{
+    padding-top: 10px;
+    height:50px;
+    width: 96%;
+    margin-left: 2%;
+}
+.single-grid-price{
+    height: 50px;
+    width: 100%;
+    font-size:17pt;
+    text-align: initial;
+    color: red;
 }
 
 

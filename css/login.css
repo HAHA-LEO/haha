@@ -2,6 +2,11 @@
     #login-header{
         height: 80px;
     }
+    #login-header img{
+        height:100%;
+        width:200px;
+
+    }
      #content{
         height: 430px;
         background-color: rgb(194, 219, 241);
