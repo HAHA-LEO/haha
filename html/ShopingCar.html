@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <style type="text/css">
+  
+        #tabOrder{
+            border: 1px solid #dedede;
+            border-collapse: collapse;
+            width: 100%;
+            clear: both;
+        }
+        .goodsName{
+            text-align: center;
+        }
+        table td.detail img{
+            height: 100px;
+            width:100px;
+            vertical-align: left;
+            vertical-align: middle;
+        }
+        table td.detail{
+            width:250px;
+            text-align: left;
+        }
+        #tabOrder tr{
+            height: 50px;
+            border-bottom: 1px dashed #dedede;
+        }
+        #tabOrder .txt{
+                width: 30px;
+                height: 25px;
+                border: 1px solid #dedede;
+                text-align: center;
+                font: bold 15px/30px Geneva,Verdana,sans-serif;
+            }
+        table tr td.cal{
+            text-align: right;  
+        }
+        table tr td.cal span{
+            font: bold 25px Geneva,spas-serif;
+            color: orange;
+        }
+        </style>
+    
+</head>
+<body>
+
+    <table id="tabOrder">
+            <caption>我的购物车</caption>
+        <tr>
+            <!-- 也可以id改变事件 onchange="check()——function名字" -->
+           <td style="width: 60px;"><input type="checkbox" id="allCheck" onChange="check()"/>全选</td>
+            <td class="goodsName">商品名称</td>
+            <td>状态</td>
+            <td>购买数量</td>
+            <td>单价</td>
+            <td>小计</td>
+            <td>操作</td>
+        </tr>
+        <tr class="trinfo">
+            <td width=60px><input type="checkbox" name="item" onChange="checkItem()"/></td>
+            <td class="detail"><img src="../images/xiangshui.webp">女士香水清新自然</td>
+            <td>可购买</td>
+            <td>
+                    <input type="button" value="-" class="btn btnMinus"/>
+                    <input class="txt" type="text" value="1" disabled="disabled"/ >
+                    <input type="button" value="+" class="btn btnAdd"/>
+            </td>
+            <td class="price">&yen;39.00</td>
+            <td class="totalPrice">&yen;39.00</td>
+            <td><a href="#" class="delete">移除</a></td>
+        </tr>
+        <tr class="trinfo">
+            <td ><input type="checkbox" name="item" onChange="checkItem()"/></td>
+            <td class="detail"><img src="../images/milk.jpg"> 特仑苏牛奶</td>
+            <td>可购买</td>
+            <td>
+                    <input type="button" value="-" class="btn btnMinus"/>
+                    <input class="txt" type="text" value="1" disabled="disabled"/ >
+                    <input type="button" value="+" class="btn btnAdd"/>
+            </td>
+            <td class="price">&yen;60.00</td>
+            <td class="totalPrice">&yen;60.00</td>
+            <td><a href="#" class="delete">移除</a></td>
+            </tr>
+        <tr class="trinfo">
+            <td><input type="checkbox" name="item" onChange="checkItem()"/></td>
+            <td class="detail"><img src="../images/kewosi.webp"> 科沃斯电动牙刷</td>
+            <td>可购买</td>
+            <td>
+                    <input type="button" value="-" class="btn btnMinus"/>
+                    <input class="txt" type="text" value="1" disabled="disabled"/ >
+                    <input type="button" value="+" class="btn btnAdd"/>
+            </td>
+            <td class="price">&yen;199.00</td>
+            <td class="totalPrice">&yen;199.00</td>
+            <td><a href="#" class="delete">移除</a></td>
+            </tr>
+        <tr class="trinfo">
+            <td><input type="checkbox" name="item" onChange="checkItem()"/></td>
+            <td class="detail"><img src="../images/cutebag.webp"> 小清新单肩包</td>
+            <td>可购买</td>
+            <td>
+                    <input type="button" value="-" class="btnMinus"/>
+                    <input class="txt" type="text" value="1" disabled="disabled"/ >
+                    <input type="button" value="+" class="btnAdd"/>
+            </td>
+            <td class="price">&yen;66.00</td>
+            <td class="totalPrice">&yen;66</td>
+            <td><a href="#" class="delete">移除</a></td>
+        </tr>
+        <tr>
+            <td colspan="7" class="cal"> 已选<span class="num"></span>件商品 应付总额：<span class="spanTotal">&yen;00.00</span></td>
+         </tr>
+    </table>
+    <script>
+      
+       //获取左右的按钮
+       var btnleft=document.getElementsByClassName("btnMinus");
+       var btnright=document.getElementsByClassName("btnAdd");
+       //获取表示数量的class名为txt的input元素集合
+       var txt=document.getElementsByClassName("txt");
+       var allCheck=document.getElementById("allCheck");
+       var item=document.getElementsByName("item");
+       //获取表示单价的class名为price的span元素集合
+       var price=document.getElementsByClassName("price");
+       var dele=document.getElementsByClassName("delete");
+       var trlist=document.getElementsByClassName("trinfo");
+       //获取表示小计的class名为totalPrice的span元素集合
+       var totalPrice=document.getElementsByClassName("totalPrice");
+       //获取表示几件商品
+       var num=document.getElementsByClassName("num");
+       //获取表示应付金额的id
+       var spanTotal=document.getElementById("spanTotal");
+       var spanTotalPrice=0;   //定义全局变量totleprice的初值为0
+   //给数量左右两边的+-添加点击事件    
+   for(var i=0;i<btnleft.length;i++) {
+       btnleft[i].index=i;    //把i的值赋给btnleft[i]的index
+       btnleft[i].onclick=function (){            //获取当前对应的文本框的值
+           var val=txt[this.index].value;
+           val--;            //控制其数量的值不能小于1            
+           if(val<=1)
+           {
+               val=1;
+           }
+           txt[this.index].value=val;  //把更新了的val值再赋给txt[this.index].value
+           addprice(this.index);    //调用一下addprice()使其在当前变化下执行
+       }
+       btnright[i].index=i;    //把i的值赋给btnright[i]的index
+       btnright[i].onclick=function (){
+           var val=txt[this.index].value;
+           val++;
+           txt[this.index].value=val;
+           addprice(this.index);
+       }       
+            
+        //给删除添加点击事件
+       dele[i].index=i;
+       dele[i].onclick=function (){
+        spanTotalPrice-=parseFloat(totalPrice[this.index].innerText);    //将总计里面对应的价格也减掉
+        spanTotal.innerText=spanTotalPrice; 
+           trlist[this.index].remove();     //去掉对应的那一行元素
+           //重新更新索引  防止其他操作出错
+           for(var k=0;k<trlist.length;k++)
+           {
+               trlist[k].index=k;
+               dele[k].index=k;
+               btnleft[k].index=k;
+               btnright[k].index=k;
+           }
+       }
+   }    //计算小计
+   function addprice(){
+        for(var i=0; i<price.length; i++){
+            totalPrice[i].innerHTML = (price[i].innerHTML*txt[i].innerHTML).toFixed(2);
+    }
+   }   
+    //计算总计
+   function showtotleprice(){
+    spanTotalPrice=0;
+       for(var i=0;i<totalPrice.length;i++)
+       {
+           if(item[i].checked)
+           {
+            spanTotalPrice+=parseFloat(totalPrice[i].innerText);
+           }
+       }
+       spanTotal.innerText=spanTotalPrice;
+   }  
+   //全选
+          function check(){
+            var cb1=document.getElementById("allCheck");
+            var chs=document.getElementsByName("item");
+            for(var i=0;i<chs.length;i++){
+                chs[i].checked=cb1.checked;
+            }
+            showtotleprice()
+      }
+      //单选
+        function checkItem(){
+            var checked=0;
+            var notchecked=0;
+            var allCheck=document.getElementById("allCheck");
+            var item=document.getElementsByName("item");
+            for(var i=0;i<item.length;i++){
+                if(item[i].checked){
+                    checked++;
+                }else{
+                    notchecked++;
+                }
+            }
+            if(checked==item.length){
+                allCheck.checked=true;
+                
+            }else if(notchecked==item.length){
+                allCheck.checked=false;
+            }else {
+                allCheck.checked=false;
+            }
+            showtotleprice()
+        }
+   //全选
+//    allCheck.onclick=function (){
+//        for(var i=0;i<item.length;i++)
+//        {
+//            item[i].checked=true;
+//        }
+       
+//    }    
+ 
+   </script>
+</body>
+</html>
